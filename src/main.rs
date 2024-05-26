@@ -7,6 +7,6 @@ struct CliArgs {
 
 fn main() {
     let args = CliArgs::parse();
-
-    println!("{:?}", args.path)
+    let content = std::fs::read_to_string(args.path).expect("Invalid file path given.");
+    println!("{}", content);
 }
